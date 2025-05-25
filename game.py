@@ -1,4 +1,5 @@
 import tkinter as tk
+from random import randint
 
 root = tk.Tk()
 root.title("Rock Paper Scissors")
@@ -58,4 +59,28 @@ reset_btn = tk.Button(
     command=lambda: [player_score.config(text="0"), computer_score.config(text="0")]
 )
 reset_btn.pack(pady=10)
+
+
+def determine_winner(player, computer):
+    if player == computer:
+        return "tie"
+    elif (player == 1 and computer == 3) or \
+         (player == 2 and computer == 1) or \
+         (player == 3 and computer == 2):
+        return "player"
+    else:
+        return "computer"
+
+def play(choice):
+    computer_choice = randint(1, 3)
+    result = determine_winner(choice, computer_choice)
+    
+    status_label.config(text=f"Computer chose: {CHOICES[computer_choice]}")
+    
+    if result == "player":
+        player_score.config(text=str(int(player_score.cget("text")) + 1))
+    elif result == "computer":
+        computer_score.config(text=str(int(computer_score.cget("text")) + 1))
+
+
 
