@@ -87,3 +87,15 @@ paper_btn.config(command=lambda: play(2))
 scissors_btn.config(command=lambda: play(3))
 
 
+# Modified play function
+def play(choice):
+    computer_choice = randint(1, 3)
+    result = determine_winner(choice, computer_choice)
+    
+    status_label.config(
+        text=f"Computer chose: {CHOICES[computer_choice]}",
+        bg="#4a7dff" if result == "tie" else "#4CAF50" if result == "player" else "#F44336"
+    )
+
+    
+
