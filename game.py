@@ -82,5 +82,8 @@ def play(choice):
     elif result == "computer":
         computer_score.config(text=str(int(computer_score.cget("text")) + 1))
 
+rock_btn.config(command=lambda: play(1))
+paper_btn.config(command=lambda: play(2))
+scissors_btn.config(command=lambda: play(3))
 
 
