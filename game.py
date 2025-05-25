@@ -51,3 +51,11 @@ computer_score = tk.Label(score_frame, text="0", font=("Arial", 24))
 
 player_score.grid(row=1, column=0, pady=10)
 computer_score.grid(row=1, column=1, pady=10)
+
+reset_btn = tk.Button(
+    footer_frame,
+    text="Reset Game",
+    command=lambda: [player_score.config(text="0"), computer_score.config(text="0")]
+)
+reset_btn.pack(pady=10)
+
