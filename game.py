@@ -97,5 +97,16 @@ def play(choice):
         bg="#4a7dff" if result == "tie" else "#4CAF50" if result == "player" else "#F44336"
     )
 
-    
 
+# Add padding and styling to all elements
+for btn in [rock_btn, paper_btn, scissors_btn]:
+    btn.config(
+        padx=20,
+        pady=10,
+        bg="#e0e0e0",
+        activebackground="#d0d0d0"
+    )
+
+# Configure score labels
+player_score.config(bg="#8BC34A")
+computer_score.config(bg="#FF5722")
