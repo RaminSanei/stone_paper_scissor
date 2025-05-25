@@ -41,3 +41,13 @@ scissors_btn = tk.Button(button_frame, text="Scissors", font=("Arial", 14))
 rock_btn.pack(side="left", expand=True)
 paper_btn.pack(side="left", expand=True)
 scissors_btn.pack(side="left", expand=True)
+
+# Score labels
+tk.Label(score_frame, text="Your Score", font=("Arial", 12)).grid(row=0, column=0)
+tk.Label(score_frame, text="Computer Score", font=("Arial", 12)).grid(row=0, column=1)
+
+player_score = tk.Label(score_frame, text="0", font=("Arial", 24))
+computer_score = tk.Label(score_frame, text="0", font=("Arial", 24))
+
+player_score.grid(row=1, column=0, pady=10)
+computer_score.grid(row=1, column=1, pady=10)
